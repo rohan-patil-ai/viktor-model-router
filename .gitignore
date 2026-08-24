@@ -1,11 +1,8 @@
-__pycache__/
-
-# Dataset — challenge use only, no redistribution
 export/
+results/
+submission/
+*.zip
+__pycache__/
 *.tar.gz
 
-# Results are regenerable
-results/
-!results/
-results/*
-!results/routellm_ui_model.pkl
+.venv/
