@@ -1,6 +1,17 @@
 # Results
 
+![Cost comparison](results_comparison.svg)
+
+![Initial router UI](router-ui-initial.png)
+
+![Explainable routed result](router-ui.png)
+
 Evaluation uses the expanded local export: 2,000 request rows reconstructed into 1,883 trajectories.
+
+The three cost numbers answer different questions: **logged routing** is what
+actually happened in the export, the **starter baseline** is the original
+short-trajectory heuristic, and **our router** uses learned prompt features plus
+similar historical outcomes.
 
 | Strategy | Estimated input cost | Change vs logged |
 | --- | ---: | ---: |
@@ -9,6 +20,10 @@ Evaluation uses the expanded local export: 2,000 request rows reconstructed into
 | RouteLLM-style classifier | $64.59 | -61.5% |
 
 The classifier route distribution is 1,479 economy, 327 mid, and 77 premium trajectories.
+
+The UI exposes the decision instead of returning only a model name: it shows
+the three tier estimates, ranked priority, model candidates, quality gap to the
+best tier, quality tolerance, and the historical trajectory IDs used as evidence.
 
 The logged data's heuristic outcome averages are:
 

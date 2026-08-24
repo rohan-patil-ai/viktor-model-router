@@ -318,7 +318,11 @@ const EXAMPLES = {
   simple: "What time is our standup meeting tomorrow?"
 };
 
-const COSTS = {economy: "$0.80/M tokens", mid: "$3.00/M tokens", premium: "$15.00/M tokens"};
+const COSTS = {
+  economy: "Claude $2.00/M · GPT $0.20/M",
+  mid: "Claude $2.00/M · GPT $2.00/M",
+  premium: "Claude $5.00/M · GPT $2.00/M"
+};
 const COLORS = {economy: "#22c55e", mid: "#f59e0b", premium: "#ef4444"};
 
 function setExample(key) {
