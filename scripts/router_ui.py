@@ -176,6 +176,7 @@ def classify_prompt(text):
     return {
         "tier": tier,
         "models": TIER_MODELS[tier],
+      "tier_models": TIER_MODELS,
         "probabilities": probabilities,
         "estimated_quality": {tier_name: round(score, 4) for tier_name, score in tier_quality.items()},
         "best_estimated_tier": best_tier,
@@ -369,7 +370,7 @@ function showResult(data) {
     return `<div class="tier-row ${selected}">
       <div class="priority-dot" style="background:${COLORS[t]}">${i + 1}</div>
       <div><div class="tier-label">${t}${selected ? " · selected" : ""}</div>
-        <div class="tier-model">Claude: ${data.models.claude} · GPT: ${data.models.gpt}</div></div>
+        <div class="tier-model">Claude: ${data.tier_models[t].claude} · GPT: ${data.tier_models[t].gpt}</div></div>
       <div class="tier-score">${data.estimated_quality[t].toFixed(4)}<small>${data.probabilities[t]}% relative evidence</small></div>
     </div>`;
   }).join("");
